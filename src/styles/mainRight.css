@@ -1,0 +1,30 @@
+.mainContainer .mainRight{
+	background:red;
+	width:220px;
+	position:fixed;
+	right:0px;
+	height:400px;
+	overflow:auto;
+}
+.mainRight .friendList{
+	margin-left:10px;
+	
+}
+.mainRight .friendList .friend{
+	display:flex;
+	align-items:center;
+	cursor:pointer;
+	margin-bottom:17px;
+}
+.mainRight .friendList .friend .image{
+	background:rgba(200,200,200,1);
+	border-radius:50%;
+	width:30px;
+	height:30px;
+	padding:3px;
+}
+.mainRight .friendList .friend p{
+	padding:0;
+	margin:0;
+	margin-left:10px;
+}

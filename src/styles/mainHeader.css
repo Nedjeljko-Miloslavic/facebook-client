@@ -1,0 +1,121 @@
+
+.main .header .search{
+	display:flex;
+	margin:10px;
+}
+.main .header .f{
+	height:30px;
+	width:30px;
+	background:white;
+	margin-right:7px;
+	border-radius:3px;
+}
+.main .header input{
+	height:30px;
+	width:450px;
+	border:none;
+	border-radius:3px 0 0 3px;
+}
+.main .header .searchIcon{
+	background:rgba(230,230,230,1);
+	padding:2px 5px 0;
+	border-radius:0 3px 3px 0;
+	cursor:pointer;
+}
+.main .header .profile{
+	display:flex;
+	align-items:center;
+	position:relative;
+	left:70px;
+	margin-left:100px;
+	margin-right:20px;
+}
+.main .header .profileImage{
+	height:30px;
+	width:30px;
+	background:white;
+	border-radius:3px;
+}
+.main .header .profileImage div{
+	position:relative;
+	right:3px;
+	top:-3px;
+}
+.main .header .profileName{
+	color:white;
+	margin:0px 5px;
+}
+.main .header .profileHome{
+	color:white;
+	margin-left:12px;
+}
+.main .header .icons{
+	display:flex;
+	align-items:center;
+	padding-bottom:10px;
+}
+.main .header .icon{
+	height:30px;
+	width:30px;
+	background:rgba(70,70,150,1);
+	margin:0px 5px;
+	padding:4px;
+	border-radius:3px;
+}
+.main .header .logout{
+	margin-right:10px;
+	cursor:pointer;
+}
+
+.main .logoutContainer{
+	background:white;
+	position:absolute;
+	right:20px;
+	top:40px;
+	width:200px;
+	padding:10px;
+	border-radius:5px;
+	box-shadow:1px 1px 3px 1px rgb(200,200,200);
+}
+.main .logoutInner{
+	display:flex;
+	align-items:center;
+	border-radius:3px;
+}
+.main .logoutInner:hover{
+	cursor:pointer;
+	background:rgba(190,190,190,1);
+}
+.main .logoutImage{
+	background:rgba(190,190,190,1);
+	border-radius:50%;
+	width:30px;
+	height:30px;
+	padding:3px;
+	margin-right:10px;
+}
+.main .logoutInner p{
+	padding:5px;
+	margin:0;
+	font-weight:600;
+}
+
+@media only screen and (max-width:1100px){
+	.main .header .profile{
+		left:20px;
+	}
+}
+@media only screen and (max-width:950px){
+	.main .header .search{
+		width:300px;
+	}
+	.main .header .profile{
+		left:0px;
+	}
+}
+@media only screen and (max-width:700px){
+	.main .header .profile{
+		display:none;
+	}
+}
+

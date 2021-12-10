@@ -1,0 +1,158 @@
+.friends{
+	width:370px;
+	background-color:white;
+	position:fixed;
+	top:60px;
+	box-shadow:0 2px 2px 2px rgb(200,200,200);
+	border-radius:5px;
+}
+.friends .friendItem{
+	display:flex;
+	align-items:center;
+	padding-left:10px;
+	border-radius:5px;
+	margin:0 6px;
+}
+.friends .friendItem:hover{
+	cursor:pointer;
+	background:rgb(220,220,240);
+}
+.friends .friendsImage{
+	width:30px;
+	height:30px;
+	background:rgb(200,200,220);
+	border-radius:50%;
+	padding:2px 0 0;
+}
+.friends p{
+	margin-left:10px;
+	font-size:17px;
+	font-weight:600;
+}
+.friends .arrow{
+	padding-bottom:15px;
+}
+
+
+.friendsSearch{
+	position:absolute;
+	left:400px;
+	top:90px;
+	width:calc(100% - 420px);
+}
+.friendsSearch h4{
+	text-align:center;
+	color:gray;
+}
+.friendsSearch .friend{
+	height:80px;
+	background:white;
+	margin:auto;
+	width:80%;
+	border-radius:5px;
+	box-shadow:0 2px 2px 2px rgb(200,200,200);
+	margin-bottom:20px;
+	display:flex;
+	align-items:center;
+}
+.friendsSearch .friend .friendImage{
+	width:65px;
+	height:65px;
+	border-radius:50%;
+	background:rgb(150,150,170);
+	margin-left:20px;
+	margin-right:10px;
+}
+.friendsSearch .friend .names{
+	display:flex;
+	width:190px;
+}
+.friendsSearch .friend .friendName{
+	margin-left:7px;
+	font-weight:600;
+	font-size:17px;
+}
+.friendsSearch .friend .addFriend{
+	background:rgb(150,150,170);
+	border-radius:50%;
+	height:30px;
+	width:30px;
+	padding:2px;
+	cursor:pointer;
+	position:relative;
+	left:calc(100% - 340px);
+}
+.addFriend .message{
+	width:118px;
+	background:rgb(70,70,70);
+	padding:4px 8px;
+	position:relative;
+	right:30px;
+	border-radius:3px;
+	color:rgb(230,230,230);
+	font-size:14px;
+	font-weight:600;
+	display:none;
+}
+.friendsSearch .friend .addFriend:hover .message{
+	display:block;
+}
+
+
+.friendsSearch .friend .removeFriend, .friendsSearch .friend .acceptFriend{
+	background:rgb(150,150,170);
+	border-radius:50%;
+	height:30px;
+	width:30px;
+	padding:2px;
+	cursor:pointer;
+	position:relative;
+	left:calc(100% - 370px);
+	visibility:hidden;
+}
+.removeFriend .message, .acceptFriend .message{
+	width:217px;
+	background:rgb(70,70,70);
+	padding:4px 8px;
+	position:relative;
+	right:100px;
+	border-radius:3px;
+	color:rgb(230,230,230);
+	font-size:14px;
+	font-weight:600;
+	display:none;
+}
+.removeFriend:hover .message, .acceptFriend:hover .message{
+	display:block;
+}
+
+
+.friendsSearch .friend .acceptFriend{
+	visibility:visible;
+	left:calc(100% - 350px);
+}
+.acceptFriend .message{
+	width:225px;
+}
+.friendsSearch .friend .unfriend{
+	height:34px;
+	width:34px;
+	padding:0px;
+}
+
+@media only screen and (max-width:850px) {
+	.friends{
+		width:80%;
+		left:10%;
+	}
+	.friends .arrow{
+		display:none;
+	}
+	
+	.friendsSearch{
+		position:absolute;
+		left:5%;
+		top:240px;
+		width:90%;
+	}
+}

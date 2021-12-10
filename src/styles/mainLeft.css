@@ -1,0 +1,48 @@
+.mainLeft .itemList{
+	margin:20px 0 0 30px;
+	overflow:auto;
+	height:80vh;
+}
+.mainLeft .itemList::-webkit-scrollbar{
+	width:0px;
+}
+.mainLeft .itemList:hover::-webkit-scrollbar{
+	width:8px;
+	background:white;
+	border-radius:6px;
+}
+.mainLeft .itemList::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+.mainLeft .itemList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.7); 
+}
+
+
+
+.mainLeft .item{
+	display:flex;
+	align-items:center;
+	height:47px;
+	padding-left:10px;
+	border-radius:6px;
+}
+.mainLeft .item:hover{
+	background:rgba(150,150,150,0.7);
+	cursor:context-menu;
+}
+.mainLeft .item:nth-child(1), .mainLeft .item:nth-child(2){
+	cursor:pointer;
+}
+.mainLeft .item p{
+	margin:0 0 0 10px;
+}
+.mainLeft .item .image{
+	width:33px;
+	height:33px;
+	background-color:rgba(140,140,140,1);
+	border-radius:50%;
+	padding:5px 0 0 5px;
+}
