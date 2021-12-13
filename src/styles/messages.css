@@ -1,0 +1,82 @@
+.message{
+	background:white;
+	width:250px;
+	height:330px;
+	position:fixed;
+	bottom:0px;
+	right:100px;
+	border-radius:10px;
+	box-shadow:0 5px 4px 4px rgb(200,200,200);
+}
+.message .messageHeader{
+	height:40px;
+	box-shadow:0 2px 1px 1px rgb(200,200,200);
+	display:flex;
+	align-items:center;
+	padding:0 10px;
+	justify-content:space-between;
+}
+.message .messageHeader .profileElements{
+	display:flex;
+	align-items:center;
+}
+.message .messageHeader .messageImage{
+	height:25px;
+	width:25px;
+	background:gray;
+	border-radius:50%;
+}
+.message .messageHeader p{
+	margin-left:5px;
+	font-weight:600;
+}
+.message .messageHeader .messageClose{
+	cursor:pointer;
+}
+
+
+
+
+
+.message .messagesBody{
+	height:240px;
+}
+.message .messagesBody .exiting{
+	width:60%;
+	background:rgb(60,60,200);
+	padding:10px;
+}
+
+
+
+
+
+
+.message textarea{
+	width:90%;
+	margin-left:5%;
+	border-radius:15px;
+	border:1px solid transparent;
+	background:rgb(200,200,230);
+	padding:10px 10px;
+	height:40px;
+	font-weight:600;
+	font-size:15px;
+	outline:none;
+	resize:none;
+	line-height:20px;
+}
+.message textarea::-webkit-input-placeholder {
+	color: rgb(100,100,100);
+	font-weight:500;
+}
+.message textarea:focus {
+	background:rgb(150,150,190);
+}
+.message textarea:focus::-webkit-input-placeholder {
+	color: white;
+}
+.message textarea::-webkit-scrollbar{
+	width:0px;
+	border-radius:3px;
+}

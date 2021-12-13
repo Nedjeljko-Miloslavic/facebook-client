@@ -7,10 +7,12 @@ import "../styles/mainLeft.css";
 import "../styles/mainMiddle.css";
 import "../styles/mainRight.css";
 import "../styles/friends.css";
+import "../styles/messages.css";
 import MainHeader from "../components/MainHeader";
 import MainLeft from "../components/MainLeft";
 import MainRight from "../components/MainRight";
 import MainMiddle from "../components/MainMiddle";
+import Messages from "../components/Messages";
 
 export default function Main(){
 	
@@ -39,6 +41,7 @@ export default function Main(){
 				<MainLeft/>
 				<MainMiddle/>
 				<MainRight/>
+				<Messages/>
 			</div>
 			
 		</div>

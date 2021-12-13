@@ -1,4 +1,5 @@
 const initialState = {
+	message:{id:"",visibility:"visible", ime:"imee", prezime:"prezime"},
 	user:{user:{ime:"ime", prezime:"prezime"}},
 	showPeople:[],
 	currentPage:"login",
@@ -134,6 +135,10 @@ export const reducer = (state=initialState, action)=>{
 			return {...state, currentPage:action.payload};
 		case "SETCURRENTVIEW":
 			return {...state, currentView:action.payload};
+		case "SETMESSAGE":
+			return {...state, message:action.payload};
+		case "CLOSEMESSAGE":
+			return {...state, message:{visibility:"hidden",ime:"ime",prezime:"prezime"}};
 		default:
 			return state;
 	}

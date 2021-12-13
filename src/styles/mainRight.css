@@ -1,14 +1,33 @@
 .mainContainer .mainRight{
-	background:red;
 	width:220px;
 	position:fixed;
 	right:0px;
-	height:400px;
+	height:450px;
 	overflow:auto;
+	direction:rtl;
+	box-shadow:2px 2px 2px 1px rgb(190,215,200);
+	border-radius:7px;
+}
+.mainRight h4{
+	position:fixed;
+	right:-10px;
+	background-color:rgb(225,235,240);
+	width:220px;
+	height:70px;
+	top:47px;
+	padding-top:30px;
+	padding-left:10px;
+	font-size:17px;
+	z-index:1;
+	box-shadow:2px 2px 2px 1px rgb(200,200,200);
+	direction:ltr;
 }
 .mainRight .friendList{
 	margin-left:10px;
-	
+	background-color:rgb(225,235,240);
+	position:relative;
+	top:100px;
+	direction:ltr;
 }
 .mainRight .friendList .friend{
 	display:flex;
@@ -27,4 +46,24 @@
 	padding:0;
 	margin:0;
 	margin-left:10px;
+}
+
+.mainContainer .mainRight::-webkit-scrollbar{
+	width:8px;
+	border-radius:3px;
+}
+.mainContainer .mainRight:hover::-webkit-scrollbar{
+	background:transparent;
+	border-radius:6px;
+}
+.mainContainer .mainRight:hover::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+	background:white;
+}
+.mainContainer .mainRight:hover::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	background:white;
+	width:2px;
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.7); 
 }

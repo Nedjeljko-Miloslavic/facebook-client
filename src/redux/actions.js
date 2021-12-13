@@ -111,6 +111,17 @@ export const setCurrentView = (payload)=>{
 		payload
 	};
 }
+export const setMessage = (payload)=>{
+	return {
+		type:"SETMESSAGE",
+		payload
+	}
+}
+export const closeMessage = ()=>{
+	return {
+		type:"CLOSEMESSAGE"
+	};
+}
 
 export {hideMessage};
 export {showMessage};
