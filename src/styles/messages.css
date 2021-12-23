@@ -40,11 +40,29 @@
 
 .message .messagesBody{
 	height:240px;
+	overflow:auto;
+	display:flex;
+	flex-direction:column-reverse;
+}
+.message .messagesBody .exiting,.message .messagesBody .incoming{
+	display:flex;
+	margin-bottom:10px;
+}
+.message .messagesBody .exiting span,.message .messagesBody .incoming span{
+	background:rgb(60,60,200);
+	display:inline-block;
+	padding:5px 10px;
+	max-width:70%;
+	border-radius:20px;
+	font-size:13px;
+	color:white;
 }
 .message .messagesBody .exiting{
-	width:60%;
-	background:rgb(60,60,200);
-	padding:10px;
+	justify-content:flex-end;
+}
+.message .messagesBody .incoming span{
+	background:rgb(180,180,200);
+	color:black;
 }
 
 

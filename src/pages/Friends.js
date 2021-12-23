@@ -1,4 +1,5 @@
 import MainHeader from "../components/MainHeader";
+import Messages from "../components/Messages";
 import SupervisedUserCircleRoundedIcon from '@material-ui/icons/SupervisedUserCircleRounded';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import GroupIcon from '@material-ui/icons/Group';
@@ -110,6 +111,7 @@ export default function Friends(){
 	
 	return (
 		<div className="main">
+			<Messages/>
 			<MainHeader/>
 			<div className="friends">
 				<div className="friendItem" onClick={()=>handlePocetna()}>

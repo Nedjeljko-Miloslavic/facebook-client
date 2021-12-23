@@ -111,9 +111,9 @@ export const setCurrentView = (payload)=>{
 		payload
 	};
 }
-export const setMessage = (payload)=>{
+export const setMessagePartner = (payload)=>{
 	return {
-		type:"SETMESSAGE",
+		type:"SETMESSAGEPARTNER",
 		payload
 	}
 }

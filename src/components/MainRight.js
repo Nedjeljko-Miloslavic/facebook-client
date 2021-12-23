@@ -1,14 +1,22 @@
 import PersonIcon from '@material-ui/icons/Person';
 import {useSelector,useDispatch} from "react-redux";
 import {useState, useEffect} from "react";
-import {setMessage} from "../redux/actions";
+import {setMessagePartner} from "../redux/actions";
+
 
 export default function MainRight(){
 	const user = useSelector(state=>state.user).user;
+	const messageVisibility = useSelector(state=>state.messageVisibility);
 	const dispatch = useDispatch();
 	const [friends,setFriends] = useState([]);
+	console.log(messageVisibility);
 	const handleOnclick = (friend)=>{
-		dispatch(setMessage({id:friend._id,ime:friend.ime,prezime:friend.prezime,visibility:"visible"}));
+		fetch("http://localhost:5000/users")
+		.then(data=>data.json())
+		.then(users=>{
+			const friendClicked = users.filter(user=>user._id===friend._id)[0];
+			dispatch(setMessagePartner({id:friendClicked._id,ime:friendClicked.ime,prezime:friendClicked.prezime}));
+		})
 	}
 	useEffect(()=>{
 		if(user.friends){
