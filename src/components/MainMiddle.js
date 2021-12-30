@@ -6,10 +6,16 @@ import MessageIcon from '@material-ui/icons/MessageOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ReplyIcon from '@material-ui/icons/ReplyOutlined';
 import {Button} from "@material-ui/core";
-import {useSelector} from "react-redux";
+import {useSelector,useDispatch} from "react-redux";
+import {useState} from "react";
+import SubmitImage from "./SubmitImage";
+import {postImage} from "../redux/actions";
 
 export default function MainMiddle(){
 	const user = useSelector(state=>state.user.user);
+	const dispatch = useDispatch();
+	
+	
 	return (
 		<div className="mainMiddle">
 			<div className="post">
@@ -18,7 +24,7 @@ export default function MainMiddle(){
 					<input type="text" placeholder={`O čemu razmišljate ${user.ime}?`} />
 				</div>
 				<div className="line"></div>
-				<div className="photo">
+				<div className="photo" onClick={()=>dispatch(postImage("block"))}>
 					<PhotoLibraryTwoToneIcon color="secondary" fontSize="large"/>
 					<span> Fotografija</span>
 				</div>
@@ -63,6 +69,9 @@ export default function MainMiddle(){
 				<p>Add more friends to see more posts in your News Feed.</p>
 				<Button variant="contained" color="primary" onClick={()=>window.location.href="/friends"}>Find friends</Button>
 			</div>
+			
+			
+			<SubmitImage/>
 		</div>
 	);
 }

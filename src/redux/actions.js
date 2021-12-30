@@ -122,6 +122,12 @@ export const closeMessage = ()=>{
 		type:"CLOSEMESSAGE"
 	};
 }
+export const postImage = (payload)=>{
+	return {
+		type:"POSTIMAGE",
+		payload
+	};
+}
 
 export {hideMessage};
 export {showMessage};

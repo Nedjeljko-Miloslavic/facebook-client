@@ -9,7 +9,7 @@ export default function MainRight(){
 	const messageVisibility = useSelector(state=>state.messageVisibility);
 	const dispatch = useDispatch();
 	const [friends,setFriends] = useState([]);
-	console.log(messageVisibility);
+
 	const handleOnclick = (friend)=>{
 		fetch("http://localhost:5000/users")
 		.then(data=>data.json())

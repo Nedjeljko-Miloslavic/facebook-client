@@ -1,4 +1,5 @@
 const initialState = {
+	postImageDisplay:"none",
 	messagePartner:{id:"",ime:"ime",prezime:"prezime"},
 	messageVisibility:"visible",
 	user:{user:{ime:"ime", prezime:"prezime"}},
@@ -140,6 +141,8 @@ export const reducer = (state=initialState, action)=>{
 			return {...state, messagePartner:action.payload,messageVisibility:"visible"};
 		case "CLOSEMESSAGE":
 			return {...state, messageVisibility:"hidden"};
+		case "POSTIMAGE":
+			return {...state, postImageDisplay:action.payload};
 		default:
 			return state;
 	}

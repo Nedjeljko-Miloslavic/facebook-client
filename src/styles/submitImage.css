@@ -1,0 +1,132 @@
+
+
+.submitImage{
+	position:fixed;
+	top:60px;
+	left:0px;
+	background:rgba(250,250,250,0.7);
+	width:100%;
+	height:100%;
+	z-index:2;
+
+}
+.submitImage .form{
+	background:white;
+	width:500px;
+	height:400px;
+	position:relative;
+	margin:auto;
+	top:10px;
+	box-shadow:rgb(180,180,180) 0px 0px 20px 5px;
+	border-radius:10px;
+}
+.submitImage .heading{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	border-bottom:solid 1px gray;
+}
+.submitImage .heading h2{
+	font-size:21px;
+}
+.submitImage .heading #x{
+	height:31px;
+	width:31px;
+	background:rgb(210,210,240);
+	border-radius:50%;
+	position:relative;
+	left:130px;
+	font-size:20px;
+	padding-left:11px;
+	cursor:pointer;
+	
+}
+.submitImage .heading div div{
+	transform:scaleX(1.5);
+	color:rgb(80,80,80);
+}
+
+
+
+
+.submitImage .inputArea input[type="text"]{
+	display:block;
+	width:90%;
+	margin:auto;
+	border:0;
+	margin-top:20px;
+	font-size:17px;
+	padding:10px;
+	border-radius:20px;
+	color:gray;
+}
+.submitImage .inputArea input[type="text"]:focus{
+	border:0;
+	outline:0;
+	box-shadow:0 0 5px 1px rgb(220,220,220);
+}
+.submitImage input[type="file"]{
+	width:200px;
+	height:200px;
+	background:yellow;
+	display:none;
+}
+.submitImage label{
+	display:block;
+	width:420px;
+	margin:auto;
+}
+.submitImage label .inputAreaInner{
+	background:rgb(240,240,250);
+	height:150px;
+	width:420px;
+	box-shadow:0 0 0px 6px white, 0 0 0px 7px rgb(180,180,180);
+	border-radius:5px;
+	margin:auto;
+	margin-top:20px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}
+.submitImage label .inputAreaInner:hover{
+	background:rgb(220,220,240);
+	cursor:pointer;
+}
+.submitImage label .inputAreaInner .image{
+	height:30px;
+	width:30px;
+	background:rgb(180,180,180);
+	border-radius:50%;
+	padding:2px 4px;
+	position:relative;
+	top:10px;
+}
+.submitImage label .inputAreaInner img{
+	width:420px;
+	height:150px;
+	position:absolute;
+}
+
+
+
+
+
+.submitImage button{
+	display:block;
+	width:87%;
+	background:rgb(50,90,250);
+	margin:auto;
+	margin-top:30px;
+	padding:10px;
+	border-radius:10px;
+	border:0;
+	color:white;
+	font-weight:600;
+	font-size:15px;
+	letter-spacing:1px;
+}
+.submitImage button:hover{
+	background:rgb(50,60,250);
+	cursor:pointer;
+}
