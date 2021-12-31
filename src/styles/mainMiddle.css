@@ -112,6 +112,11 @@
 .mainMiddle .feedItem .feedContent{
 	margin:auto;
 }
+.mainMiddle .feedItem .feedContent img{
+	display:block;
+	width:400px;
+	
+}
 
 .mainMiddle .feedItem .stats {
 	display:flex;

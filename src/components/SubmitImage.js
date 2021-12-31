@@ -1,7 +1,7 @@
 import {useState,useEffect,useRef} from "react"; 
 import {useSelector,useDispatch} from "react-redux";
 import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate';
-import {postImage} from "../redux/actions";
+import {postImage,loadUser} from "../redux/actions";
 
 export default function(){
 	const dispatch = useDispatch();
@@ -24,6 +24,11 @@ export default function(){
 		setInfoVisibility("visible");
 		textRef.current.value = "";
 		setText("");
+		fetch("http://localhost:5000/test",{credentials: "include"})
+		.then(result=>result.json())
+		.then(user=>{
+			dispatch(loadUser(user));
+		});
 	}
 	const submit =()=>{
 		if(file){
@@ -35,18 +40,23 @@ export default function(){
 				method:"POST",
 				body:image
 			})
+			.then(result=>handleClick())
 			.catch(err=>console.log(err));	
 		}else{
-			console.log(text);
-			fetch("http://localhost:5000/textPost",{
-				credentials:"include",
-				method:"POST",
-				headers:{"Content-Type":"application/json"},
-				body:JSON.stringify({
-					text:text
+			if(text){
+				console.log(text);
+				fetch("http://localhost:5000/textPost",{
+					credentials:"include",
+					method:"POST",
+					headers:{"Content-Type":"application/json"},
+					body:JSON.stringify({
+						text:text
+					})
 				})
-			})
-			.catch(err=>console.log(err));
+				.then(result=>handleClick())
+				.catch(err=>console.log(err));
+			}
+			
 		}
 		
 	}
