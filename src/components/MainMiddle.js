@@ -55,7 +55,6 @@ export default function MainMiddle(){
 			}
 		});
 	},[user]);
-	console.log(allPosts);
 	
 	return (
 		<div className="mainMiddle">

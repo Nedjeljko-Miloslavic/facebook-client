@@ -9,6 +9,9 @@ import "../styles/mainRight.css";
 import "../styles/friends.css";
 import "../styles/messages.css";
 import "../styles/submitImage.css";
+import "../styles/profile.css";
+import "../styles/messagePartnersHeader.css";
+
 import MainHeader from "../components/MainHeader";
 import MainLeft from "../components/MainLeft";
 import MainRight from "../components/MainRight";

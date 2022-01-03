@@ -9,6 +9,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {useSelector,useDispatch} from "react-redux";
 import {useState} from "react";
 import {showPeople,setCurrentView} from "../redux/actions";
+import MessagePartnersHeader from "./MessagePartnersHeader";
 
 function MainHeader(){
 	const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function MainHeader(){
 	}
 	return (
 		<div className="header">
+			<MessagePartnersHeader/>
 			<div className="search">
 				<div className="f" onClick={()=>window.location.href="/main"}><img src="images/facebookIcon.svg" alt="facebook"/></div>
 				<input type="text" onKeyPress={(e)=>{handleKeyPress(e)}} onInput={(e)=>setSearchValue(e.target.value)} placeholder='Pretraži ljude mjesta i događaje'/>

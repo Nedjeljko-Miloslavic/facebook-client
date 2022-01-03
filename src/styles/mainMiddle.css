@@ -85,6 +85,7 @@
 	background:white;
 	box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius:5px;
+	margin-bottom:11px;
 }
 .mainMiddle .feedItem .feedHeading {
 	display:flex;
@@ -114,7 +115,7 @@
 }
 .mainMiddle .feedItem .feedContent img{
 	display:block;
-	width:400px;
+	width:100%;
 	
 }
 

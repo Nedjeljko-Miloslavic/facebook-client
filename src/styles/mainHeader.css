@@ -65,6 +65,7 @@
 .main .header .logout{
 	margin-right:10px;
 	cursor:pointer;
+	
 }
 
 .main .logoutContainer{
@@ -76,6 +77,7 @@
 	padding:10px;
 	border-radius:5px;
 	box-shadow:1px 1px 3px 1px rgb(200,200,200);
+	z-index:4;
 }
 .main .logoutInner{
 	display:flex;
