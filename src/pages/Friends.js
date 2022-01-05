@@ -63,7 +63,14 @@ export default function Friends(){
 	}
 	const handleSviPrijatelji = ()=>{
 		dispatch(setCurrentView("prijatelji"));
-		dispatch(peopleLocal(user.friends));
+		let friends = [];
+		fetch("http://localhost:5000/users")
+		.then(data=>data.json())
+		.then(result=>{
+			let friends = result.filter(person=>user.friends.includes(person._id));
+			dispatch(peopleLocal(friends));
+		});
+		
 	}
 	
 	//add remove & accept--------------------------
@@ -107,6 +114,7 @@ export default function Friends(){
 		})
 		.then(()=>setState(Math.random()));
 	}
+
 	
 	
 	return (
@@ -146,7 +154,7 @@ export default function Friends(){
 					}
 					return (
 						<div key={index} className="friend">
-							<div className="friendImage"><PersonIcon fontSize="large" style={{height:"65px", width:"65px", color:"white"}}/></div>
+							<div className="friendImage">{friend.profilePicture==="none" && <PersonIcon fontSize="large" style={{height:"65px", width:"65px", color:"white"}}/>}{friend.profilePicture!=="none" && <img src={"http://localhost:5000/"+friend.profilePicture.slice(7)} alt="profileImg"/>}</div>
 							<div className="names">
 								<p className="friendName">{friend.ime}</p>
 								<p className="friendName">{friend.prezime}</p>
@@ -172,6 +180,11 @@ export default function Friends(){
 							{currentView==="zahtjevi" && <div className="acceptFriend" onClick={()=>acceptFriend(friend)}>
 								<DoneIcon/>
 								<div className="message">Prihvati zahtjev za prijateljstvom</div>
+							</div>}
+							
+							{currentView==="prijatelji" && <div className="addFriend unfriend" onClick={()=>unfriend(friend)}>
+								<RemoveCircleIcon fontSize="large"/>
+								<div className="message">Ukloni prijatelja</div>
 							</div>}
 							
 						</div>

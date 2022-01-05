@@ -15,7 +15,7 @@ export default function MainRight(){
 		.then(data=>data.json())
 		.then(users=>{
 			const friendClicked = users.filter(user=>user._id===friend._id)[0];
-			dispatch(setMessagePartner({id:friendClicked._id,ime:friendClicked.ime,prezime:friendClicked.prezime}));
+			dispatch(setMessagePartner({id:friendClicked._id,ime:friendClicked.ime,prezime:friendClicked.prezime,profilePicture:friendClicked.profilePicture}));
 		})
 	}
 	useEffect(()=>{
@@ -35,7 +35,8 @@ export default function MainRight(){
 				{friends.map((friend,index)=>{
 					return (<div key={index} className="friend" onClick={()=>handleOnclick(friend)}>
 						<div className="image">
-							<PersonIcon/>
+							{friend.profilePicture==="none" && <PersonIcon/>}
+							{friend.profilePicture!=="none" && <img src={"http://localhost:5000/"+friend.profilePicture.slice(7)} alt="profilePicture"/>}
 						</div>
 						<p>{friend.ime}</p><p>{friend.prezime}</p>
 					</div>)

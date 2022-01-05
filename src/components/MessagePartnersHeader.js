@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from "react-redux";
 import {useEffect,useState} from "react";
 import {setMessagePartner} from "../redux/actions";
 
-export default function MessagePartnersHeader(){
+export default function MessagePartnersHeader(props){
 	const user = useSelector(state=>state.user).user;
 	const [messagePartners,setMessagePartners] = useState([]);
 	const dispatch = useDispatch();
@@ -29,18 +29,16 @@ export default function MessagePartnersHeader(){
 	},[user]);
 	
 	const handleOnclick = (e)=>{
-		console.log(e);
-		dispatch(setMessagePartner({id:e._id,ime:e.ime,prezime:e.prezime}));
+		dispatch(setMessagePartner({id:e._id,ime:e.ime,prezime:e.prezime,profilePicture:e.profilePicture}));
 	}
 	
-	//console.log(messagePartners);
 	return (
-		<div className="messagePartnersHeader">
+		<div className="messagePartnersHeader" style={{visibility:props.visibility}}>
 			<div className="title">Poruke</div>
 			{messagePartners.map((partner,index)=>{
 				return (
 					<div key={index} value={partner} onClick={()=>handleOnclick(partner)} className="messagePartnersItem">
-						<div className="image"><PersonIcon fontSize="small" style={{fill:"white"}} /></div>
+						<div className="image">{partner.profilePicture==="none" && <PersonIcon fontSize="small" style={{fill:"white"}} />}{partner.profilePicture!=="none" && <img src={"http://localhost:5000/"+partner.profilePicture.slice(7)} alt="profilePicture" />}</div>
 						<div className="name">{partner.ime}</div>
 						<div className="name">{partner.prezime}</div>
 					</div>

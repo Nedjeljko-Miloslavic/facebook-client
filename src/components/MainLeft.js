@@ -16,7 +16,7 @@ export default function MainLeft(){
 	return (
 		<div className="mainLeft">
 			<div className="itemList">
-				<div className="item"><div className="image"><PersonIcon style={{fill:"white"}}/></div><p>{user.ime}</p><p>{user.prezime}</p></div>
+				<div className="item"><div className="image">{user.profilePicture==="none" &&<PersonIcon style={{fill:"white"}}/>}{user.profilePicture!=="none" && <img src={"http://localhost:5000/"+user.profilePicture.slice(7)} alt="profileImg" />}</div><p>{user.ime}</p><p>{user.prezime}</p></div>
 				<div className="item" onClick={()=>window.location.href="/friends"}><Friends color="primary"/><p>Pronađite prijatelje</p></div>
 				<div className="item"><FacebookIcon color="primary"/><p>Dobro došli</p></div>
 				<div className="item"><SupervisedUserCircleRoundedIcon style={{fill:"brown"}}/><p>Grupe</p></div>

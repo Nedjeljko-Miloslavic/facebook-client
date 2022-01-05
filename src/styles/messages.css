@@ -1,4 +1,4 @@
-.message{
+#message{
 	background:white;
 	width:250px;
 	height:330px;
@@ -7,9 +7,9 @@
 	right:100px;
 	border-radius:10px;
 	box-shadow:0 5px 4px 4px rgb(200,200,200);
-	z-index:0;
+	z-index:1;
 }
-.message .messageHeader{
+#message .messageHeader{
 	height:40px;
 	box-shadow:0 2px 1px 1px rgb(200,200,200);
 	display:flex;
@@ -17,21 +17,27 @@
 	padding:0 10px;
 	justify-content:space-between;
 }
-.message .messageHeader .profileElements{
+#message .messageHeader .profileElements{
 	display:flex;
 	align-items:center;
 }
-.message .messageHeader .messageImage{
+#message .messageHeader .messageImage{
 	height:25px;
 	width:25px;
 	background:gray;
 	border-radius:50%;
+	overflow:hidden;
 }
-.message .messageHeader p{
+#message .messageHeader .messageImage img{
+	width:25px;
+	height:25px;
+	background:white;
+}
+#message .messageHeader p{
 	margin-left:5px;
 	font-weight:600;
 }
-.message .messageHeader .messageClose{
+#message .messageHeader .messageClose{
 	cursor:pointer;
 }
 
@@ -39,17 +45,17 @@
 
 
 
-.message .messagesBody{
+#message .messagesBody{
 	height:240px;
 	overflow:auto;
 	display:flex;
 	flex-direction:column-reverse;
 }
-.message .messagesBody .exiting,.message .messagesBody .incoming{
+#message .messagesBody .exiting,#message .messagesBody .incoming{
 	display:flex;
 	margin-bottom:10px;
 }
-.message .messagesBody .exiting span,.message .messagesBody .incoming span{
+#message .messagesBody .exiting span,#message .messagesBody .incoming span{
 	background:rgb(60,60,200);
 	display:inline-block;
 	padding:5px 10px;
@@ -58,12 +64,13 @@
 	font-size:13px;
 	color:white;
 }
-.message .messagesBody .exiting{
+#message .messagesBody .exiting{
 	justify-content:flex-end;
 }
-.message .messagesBody .incoming span{
+#message .messagesBody .incoming span{
 	background:rgb(180,180,200);
 	color:black;
+	
 }
 
 
@@ -71,7 +78,7 @@
 
 
 
-.message textarea{
+#message textarea{
 	width:90%;
 	margin-left:5%;
 	border-radius:15px;
@@ -85,17 +92,17 @@
 	resize:none;
 	line-height:20px;
 }
-.message textarea::-webkit-input-placeholder {
+#message textarea::-webkit-input-placeholder {
 	color: rgb(100,100,100);
 	font-weight:500;
 }
-.message textarea:focus {
+#message textarea:focus {
 	background:rgb(150,150,190);
 }
-.message textarea:focus::-webkit-input-placeholder {
+#message textarea:focus::-webkit-input-placeholder {
 	color: white;
 }
-.message textarea::-webkit-scrollbar{
+#message textarea::-webkit-scrollbar{
 	width:0px;
 	border-radius:3px;
 }

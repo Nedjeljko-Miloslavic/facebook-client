@@ -30,11 +30,22 @@
 	margin-left:100px;
 	margin-right:20px;
 }
+.main .header .profile div{
+	cursor:pointer;
+}
 .main .header .profileImage{
 	height:30px;
 	width:30px;
 	background:white;
 	border-radius:3px;
+	overflow:hidden;
+}
+.main .header .profileImage img{
+	width:30px;
+	height:30px;
+	position:relative;
+	top:3px;
+	left:3px;
 }
 .main .header .profileImage div{
 	position:relative;
@@ -61,6 +72,9 @@
 	margin:0px 5px;
 	padding:4px;
 	border-radius:3px;
+}
+.main .header .icon:nth-child(2),.main .header .icon:nth-child(1){
+	cursor:pointer;
 }
 .main .header .logout{
 	margin-right:10px;

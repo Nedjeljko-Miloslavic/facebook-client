@@ -9,15 +9,43 @@ import {Button} from "@material-ui/core";
 import {useSelector,useDispatch} from "react-redux";
 import {useState,useEffect} from "react";
 import SubmitImage from "./SubmitImage";
-import {postImage} from "../redux/actions";
+import {postImage,loadUser} from "../redux/actions";
 
 export default function MainMiddle(){
 	const milisecs = Date.now();
 	const date = new Date(milisecs);
 	const user = useSelector(state=>state.user.user);
 	const [allPosts,setAllPosts] = useState([]);
+	const [state,setState] = useState(1);
 	const dispatch = useDispatch();
+	
+	const handleKeyPress = (e)=>{
+		if(e.key==="Enter"){
+			fetch("http://localhost:5000/textPost",{
+				credentials:"include",
+				method:"POST",
+				headers:{"Content-Type":"application/json"},
+				body:JSON.stringify({
+					text:e.target.value
+				})
+			})
+			.then((result)=>setState(Math.random()))
+			.catch(err=>console.log(err));
+		}
+	}
 	useEffect(()=>{
+		setInterval(()=>{
+			setState(Math.random());
+			fetch("http://localhost:5000/test",{credentials: "include"})
+			.then(result=>result.json())
+			.then(user=>{
+				dispatch(loadUser(user));
+			});
+		},10000);
+	},[]);
+	
+	useEffect(()=>{
+		
 		fetch("http://localhost:5000/users")
 		.then(result=>result.json())
 		.then(data=>{
@@ -38,7 +66,7 @@ export default function MainMiddle(){
 				allPosts = allPosts.map(post=>{
 					let timeDifference = (Date.now()-post.timestamp)/1000;
 					if(timeDifference<60){
-						post.timestamp = timeDifference + " s";
+						post.timestamp = Math.round(timeDifference) + " s";
 					}else if(timeDifference<3600){
 						post.timestamp = Math.round(timeDifference/60) + " min";
 					}else if(timeDifference<86400){
@@ -54,14 +82,14 @@ export default function MainMiddle(){
 				setAllPosts(allPosts);
 			}
 		});
-	},[user]);
+	},[user,state]);
 	
 	return (
 		<div className="mainMiddle">
 			<div className="post">
 				<div className="text">
-					<div className="image"><PersonIcon style={{fill:"white"}} fontSize="large"/></div>
-					<input type="text" placeholder={`O čemu razmišljate ${user.ime}?`} />
+					<div className="image">{user.profilePicture==="none" && <PersonIcon style={{fill:"white"}} fontSize="large"/>}{user.profilePicture!=="none" && <img src={"http://localhost:5000/"+user.profilePicture.slice(7)} alt="profileImg" />}</div>
+					<input type="text" onKeyPress={(e)=>handleKeyPress(e)} placeholder={`O čemu razmišljate ${user.ime}?`} />
 				</div>
 				<div className="line"></div>
 				<div className="photo" onClick={()=>dispatch(postImage("block"))}>
@@ -75,7 +103,7 @@ export default function MainMiddle(){
 					return (
 					<div className="feedItem" key={index}>
 						<div className="feedHeading">
-							<div className="smallPhoto"><PersonIcon style={{fill:"white"}} fontSize="medium"/></div>
+							<div className="smallPhoto">{post.profilePicture==="none" && <PersonIcon style={{fill:"white"}} fontSize="medium"/>}{post.profilePicture!=="none" && <img src={"http://localhost:5000/"+post.profilePicture.slice(7)}/>}</div>
 							<div className="info">
 								<span>{`${post.ime} ${post.prezime}`}</span>
 								<div className="date">{post.timestamp.toString()}</div>

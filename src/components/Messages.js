@@ -58,11 +58,12 @@ export default function Messages(){
 	
 	
 	return (
-		<div className="message" style={{visibility:messageVisibility}}>
+		<div id="message" style={{visibility:messageVisibility}}>
 			<div className="messageHeader">
 				<div className="profileElements">
 					<div className="messageImage">
-						<PersonIcon/>
+						{messagePartner.profilePicture==="none" && <PersonIcon/>}
+						{messagePartner.profilePicture!=="none" && <img src={"http://localhost:5000/"+messagePartner.profilePicture.slice(7)} alt=""/>}
 					</div>
 					<p>{messagePartner.ime}</p>
 					<p>{messagePartner.prezime}</p>

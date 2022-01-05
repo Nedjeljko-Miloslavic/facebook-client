@@ -2,13 +2,14 @@
 	position:fixed;
 	right:10px;
 	top:60px;
-	width:300px;
+	width:230px;
 	height:290px;
 	background:white;
 	border-radius:7px;
 	box-shadow:1px 1px 3px 1px gray;
 	padding:10px;
 	z-index:1;
+	overflow:auto;
 	
 }
 .messagePartnersHeader .title{
@@ -32,6 +33,15 @@
 	height:23px;
 	border-radius:50%;
 	padding:2px;
+	overflow:hidden;
+}
+.messagePartnersHeader .image img{
+	background:white;
+	height:23px;
+	width:23px;
+	position:relative;
+	bottom:2px;
+	right:2px;
 }
 .messagePartnersHeader .name{
 	margin-left:5px;

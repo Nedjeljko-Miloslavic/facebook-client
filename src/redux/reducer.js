@@ -1,8 +1,8 @@
 const initialState = {
 	postImageDisplay:"none",
-	messagePartner:{id:"",ime:"ime",prezime:"prezime"},
-	messageVisibility:"visible",
-	user:{user:{ime:"ime", prezime:"prezime"}},
+	messagePartner:{id:"",ime:"ime",prezime:"prezime",profilePicture:"none"},
+	messageVisibility:"hidden",
+	user:{user:{ime:"ime", prezime:"prezime",profilePicture:"none"}},
 	showPeople:[],
 	currentPage:"login",
 	show:false,

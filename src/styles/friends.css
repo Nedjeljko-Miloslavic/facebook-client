@@ -62,6 +62,13 @@
 	background:rgb(150,150,170);
 	margin-left:20px;
 	margin-right:10px;
+	overflow:hidden;
+}
+.friendsSearch .friend .friendImage img{
+	height:65px;
+	width:65px;
+	background:white;
+	
 }
 .friendsSearch .friend .names{
 	display:flex;

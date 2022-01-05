@@ -82,6 +82,7 @@ export default function Profile(){
 					<img src={src} alt="img"  style={{visibility:visibility}}/>
 					<div id="ime">{user.ime}</div>
 					<div id="prezime">{user.prezime}</div>
+					<div className="submit" onClick={()=>submit()} style={{visibility:visibility}}>Spremi sliku</div>
 				</div>
 				<div className="dodajte">
 					<CameraAltIcon/>
@@ -89,7 +90,7 @@ export default function Profile(){
 				</div>
 			</label>
 			<input type="file" id="profilePicture" onChange={(e)=>handleChange(e)}/>
-			<div className="submit" onClick={()=>submit()} style={{visibility:visibility}}>Spremi sliku</div>
+			
 			<div className="boxCover"></div>
 			{user.profilePicture!=="none" && <div className="savedProfileImage">
 				 <img src={profileImageSrc} alt="profileImage"/>
