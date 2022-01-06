@@ -163,3 +163,22 @@
 		width:90%;
 	}
 }
+@media only screen and (max-width:420px) {
+	.friends{
+		width:350px;
+		position:static;
+		margin:auto;
+		margin-top:60px;
+	}
+	
+	
+	.friendsSearch{
+		position:static;
+		margin:auto;
+		margin-top:30px;
+		width:350px;
+	}
+	.friendsSearch .friend{
+		width:100%;
+	}
+}

@@ -75,7 +75,7 @@ export default function Profile(){
 			</div>
 			<label htmlFor="profilePicture" className="square">
 				<div className="personImage">
-					<div className="personImageImage"><PersonIcon style={{fill:"white",width:"180px",height:"180px"}}/></div>
+					<div className="personImageImage"><PersonIcon style={{fill:"white",width:"100%",height:"100%"}}/></div>
 					<div className="camera">
 						<CameraAltIcon/>
 					</div>

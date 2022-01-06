@@ -38,7 +38,6 @@
 }
 
 .mainContainer .mainMiddle{
-	background:skyblue;
 	width:50%;
 	position:relative;
 	left:25%;
@@ -46,7 +45,7 @@
 
 
 
-@media only screen and (max-width:860px){
+@media only screen and (max-width:900px){
 	.mainContainer .mainLeft{
 		display:none;
 	}
@@ -56,5 +55,13 @@
 	}
 	.mainContainer .mainRight{
 		width:30%;
+	}
+}
+@media only screen and (max-width:600px){
+	.mainContainer .mainRight{
+		display:none;
+	}
+	.mainContainer .mainMiddle{
+		margin:auto;
 	}
 }

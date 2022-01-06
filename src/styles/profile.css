@@ -17,6 +17,7 @@
 	display:block;
 	cursor:pointer;
 }
+
 #profile .personImage{
 	position:relative;
 	top:80%;
@@ -26,6 +27,10 @@
 	background:rgb(210,210,240);
 	box-shadow:gray 0px 0px 1px 1px,white 0px 0px 1px 4px;
 	left:40px;
+}
+#profile .personImageImage{
+	width:180px;
+	height:180px;
 }
 #profile .personImage img{
 	height:100%;
@@ -56,6 +61,8 @@
 	top:30%;
 	padding:7px;
 }
+
+
 #profile .dodajte span {
 	margin-left:5px;
 	font-weight:500;
@@ -110,4 +117,58 @@
 }
 #profile .message{
 	z-index:2;
+}
+
+
+@media only screen and (max-width:900px){
+	#profile .square{
+		width:700px;
+		height:350px;
+	}
+	#profile .dodajte{
+		left:400px;
+	}
+}
+
+@media only screen and (max-width:700px){
+	#profile .square{
+		width:500px;
+		height:300px;
+	}
+	#profile .dodajte{
+		left:230px;
+		top:120px;
+	}
+	#profile .savedProfileImage{
+		width:300px;
+		height:200px;
+		left:calc(50% - 150px);
+	}
+	#profile .personImage{
+		width:100px;
+		height:100px;
+	}
+	#profile .personImageImage{
+		width:100px;
+		height:100px;
+	}
+	#profile .personImage img{
+		bottom:calc(100% + 35px);
+	}
+	#profile .personImage .camera{
+		bottom:40px;
+		left:80px;
+	}
+	#profile .personImage #ime,#profile .personImage #prezime{
+		top:60px;
+		font-size:30px;
+		line-height:25px;
+		left:140px;
+	}
+	#profile .personImage #prezime{
+		top:90px;
+	}
+	#profile .submit{
+		top:130px;
+	}
 }
